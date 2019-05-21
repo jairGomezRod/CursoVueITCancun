@@ -2,18 +2,18 @@
 ### Proyecto el cual será deconstruido
 
 
-### Getting Started
+### Como iniciar
 ```sh
-# Project setup
+# Instalar dependencias
 npm install
 
-# Compiles and hot-reloads for development
+# Compilar para desarrollo
 npm run dev
 
-# Compiles and minifies for production
+# Compilar para producción
 npm run build
 
 
-### Customize configuration
+### Más información
 See [Configuration Reference](https://cli.vuejs.org/config/).
 See [Documentation](https://cli.vuejs.org/).
