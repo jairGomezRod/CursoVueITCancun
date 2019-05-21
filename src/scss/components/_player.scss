@@ -1,0 +1,61 @@
+// Player
+.player {
+  padding: 15px 10px;
+  grid-template-columns: 25px 1fr 125px;
+  border-bottom: 1px solid;
+  border-color: darken($gray-color, 3%);
+  align-items: center;
+  &:last-child {
+    border: 0;
+  }
+
+  .player-name {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 700;
+    align-items: center;
+
+    svg {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      fill: darken($gray-color, 35%);
+      &.is-high-score {
+        animation: beat .6s ease-in;
+        fill: $yellow-color;
+      }
+    }
+  }
+
+  .player-controls {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    .score {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .btn {
+      border: 0;
+      font-size: 16px;
+      padding: 10px 14px;
+      background-color: $primary-color;
+      cursor: pointer;
+      color: $white-color;
+      border-radius: 3px;
+      &:disabled,
+      [disabled] {
+        color: darken($gray-color, 15%);
+        background-color: darken($gray-color, 5%);
+        &:hover {
+          background-color: darken($gray-color, 5%);
+        }
+      }
+      &:hover {
+        background-color: darken($primary-color, 5%);
+      }
+    }
+  }
+}
