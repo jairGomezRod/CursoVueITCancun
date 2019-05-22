@@ -8,7 +8,7 @@
 npm install
 
 # Compilar para desarrollo
-npm run dev
+npm run serve
 
 # Compilar para producción
 npm run build
