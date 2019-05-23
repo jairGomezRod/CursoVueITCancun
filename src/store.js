@@ -15,6 +15,10 @@ export default new Vuex.Store({
         name: 'Goldo',
         points: 0,
       },
+      {
+        name:'jair',
+        points:10,
+      }
     ],
   },
   actions: {
@@ -30,6 +34,9 @@ export default new Vuex.Store({
     STATUS_GAME: ({ commit }, status) => {
       commit('STATUS_GAME', status);
     },
+    RESET_RECORDS:({commit},value_records)=>{
+      commit('RESET_RECORDS', value_records);
+    }
   },
   mutations: {
     SET_PLAYER: (state, { name }) => {
@@ -49,6 +56,10 @@ export default new Vuex.Store({
     },
     STATUS_GAME: (state, status) => {
       state.isRunning = status;
+    },
+    RESET_RECORDS: (state,value_records)=>{
+      console.log(value_records);
+      state.players[0].points = value_records;
     },
   },
   getters: {

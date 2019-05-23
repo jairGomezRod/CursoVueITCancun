@@ -45,6 +45,7 @@ export default {
     },
     reset() {
       this.elapsedTime = 0;
+      this.$store.dispatch('RESET_RECORDS', 0);
     },
   },
   computed: {
