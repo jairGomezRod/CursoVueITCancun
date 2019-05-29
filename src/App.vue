@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Scoreboard />
+    <!--<Scoreboard />-->
+    <router-view></router-view>
   </div>
 </template>
 

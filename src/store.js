@@ -20,6 +20,7 @@ export default new Vuex.Store({
         points:10,
       }
     ],
+    records:[{}]
   },
   actions: {
     ADD_PLAYER: ({ commit }, { name }) => {
@@ -34,8 +35,12 @@ export default new Vuex.Store({
     STATUS_GAME: ({ commit }, status) => {
       commit('STATUS_GAME', status);
     },
-    RESET_RECORDS:({commit},value_records)=>{
-      commit('RESET_RECORDS', value_records);
+    RESET_POINTS:({commit},value_records)=>{
+      commit('RESET_POINTS', value_records);
+    },
+    ADD_RECORD:({commit},{name,points})=>{
+      console.log(name)
+      commit('ADD_RECORD', {name,points});
     }
   },
   mutations: {
@@ -57,10 +62,16 @@ export default new Vuex.Store({
     STATUS_GAME: (state, status) => {
       state.isRunning = status;
     },
-    RESET_RECORDS: (state,value_records)=>{
-      console.log(value_records);
+    RESET_POINTS: (state,value_records)=>{      
       state.players[0].points = value_records;
     },
+    ADD_RECORD:(state, {name,points})=>{
+      const player_record = {
+        name,
+        points,      
+      };
+      state.records.push(player_record);
+    }
   },
   getters: {
     players: state => state.players,
@@ -74,6 +85,15 @@ export default new Vuex.Store({
       }
       return null;
     },
+    playerHighestScore:(state) => {
+      const scores = state.players.map(p => p.points);
+      const highestScore = Math.max(...scores);
+      if (highestScore) {
+        return highestScore;
+      }
+      return null;
+    },
     isRunning: state => state.isRunning,
+    records: state => state.records,
   },
 });

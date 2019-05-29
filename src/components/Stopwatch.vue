@@ -45,12 +45,26 @@ export default {
     },
     reset() {
       this.elapsedTime = 0;
-      this.$store.dispatch('RESET_RECORDS', 0);
+      console.log(this.players)
+      for(let x in this.players){
+        
+        if(this.players[x].points == this.highestScore){
+          
+          let hightName=this.players[x].name;
+          let hightPoint=this.players[x].points;
+
+          this.$store.dispatch('ADD_RECORD',{hightName,hightPoint});
+        }
+      }
+      // 
+      this.$store.dispatch('RESET_POINTS', 0);
     },
   },
   computed: {
     ...mapGetters([
       'isRunning',
+      'highestScore',
+      'players'
     ]),
     seconds() {
       return Math.floor(this.elapsedTime / 1000);

@@ -18,6 +18,9 @@
       <div class="scoreboard-footer">
         <PlayerForm />
       </div>
+      <div>
+        <router-link :to="'/records-'+name">Records</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +37,7 @@ export default {
   computed: {
     ...mapGetters([
       'players',
+      'records'
     ]),
   },
   components: {
@@ -42,5 +46,10 @@ export default {
     Statistics,
     Stopwatch,
   },
+  data(){
+    return{
+      name:"Jair"
+    }
+  }
 };
 </script>
