@@ -11,7 +11,14 @@ const routes = [
     {
         path: "/records-:name",
         component:Records,
-        name:"records"        ,
+        name:"records",
+        children:[
+            {
+                path:"/records-:name-:secondName?",
+                name:"records_id",
+                component:Records
+            }
+        ]
     },
     
     {
