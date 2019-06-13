@@ -8,15 +8,15 @@ export default new Vuex.Store({
     isRunning: false,
     players: [
       {
-        name: 'Golda',
+        name: 'Pikachu',
         points: 0,
       },
       {
-        name: 'Goldo',
+        name: 'Charisard',
         points: 0,
       },
       {
-        name:'jair',
+        name:'Charmander',
         points:10,
       }
     ],
